@@ -29,9 +29,3 @@ updates:
       # Allow only production updates for Sphinx
       - dependency-name: "sphinx"
         dependency-type: "production"
-        
- - package-ecosystem: "composer"
-    directory: "/"
-    schedule:
-      # Check for updates managed by Composer once a week
-      interval: "weekly"
