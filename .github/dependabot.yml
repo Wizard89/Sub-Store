@@ -35,14 +35,3 @@ updates:
     schedule:
       # Check for updates managed by Composer once a week
       interval: "weekly"
-      
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    allow:
-      # Allow updates for Lodash
-      - dependency-name: "lodash"
-      # Allow updates for React and any packages starting "react"
-      - dependency-name: "react*"
-      
