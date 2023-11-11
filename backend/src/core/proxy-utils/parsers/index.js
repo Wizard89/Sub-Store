@@ -487,7 +487,7 @@ function Clash_All() {
                 'ss',
                 'ssr',
                 'vmess',
-                'socks',
+                'socks5',
                 'http',
                 'snell',
                 'trojan',
@@ -637,6 +637,15 @@ function Loon_Trojan() {
     const name = 'Loon Trojan Parser';
     const test = (line) => {
         return /^.*=\s*trojan/i.test(line.split(',')[0]);
+    };
+
+    const parse = (line) => getLoonParser().parse(line);
+    return { name, test, parse };
+}
+function Loon_Hysteria2() {
+    const name = 'Loon Hysteria2 Parser';
+    const test = (line) => {
+        return /^.*=\s*Hysteria2/i.test(line.split(',')[0]);
     };
 
     const parse = (line) => getLoonParser().parse(line);
@@ -864,6 +873,7 @@ export default [
     Loon_SSR(),
     Loon_VMess(),
     Loon_Vless(),
+    Loon_Hysteria2(),
     Loon_Trojan(),
     Loon_Http(),
     Loon_WireGuard(),
